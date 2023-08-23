@@ -59,9 +59,9 @@ Installation steps for mongodb:
 
 7. Verify that MongoDB has started successfully.
 
-       sudo systemctl status mongod
+        sudo systemctl status mongod
 
-  You can optionally ensure that MongoDB will start following a system reboot by issuing the following command:
+   You can optionally ensure that MongoDB will start following a system reboot by issuing the following command:
 
         sudo systemctl enable mongod
 
