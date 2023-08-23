@@ -47,13 +47,13 @@ Installation steps for mongodb:
 
 6. Start MongoDB.
 
-       sudo systemctl start mongod
+         sudo systemctl start mongod
 
     If you receive an error similar to the following when starting mongod:
     Failed to start mongod.service: Unit mongod.service not found.
     Run the following command first:
 
-        sudo systemctl daemon-reload
+          sudo systemctl daemon-reload
 
     Then run the start command above again.
 
