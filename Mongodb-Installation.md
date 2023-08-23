@@ -73,12 +73,35 @@ Installation steps for mongodb:
 
        sudo systemctl restart mongod
 
-9. Begin using MongoDB.
+9. After installing the mongodb change the bindip in mongodb conf file.
+
+       vim /etc/mongo.conf
+
+   Goto net section
+     net
+       bindip: 127.0.0.1 # this is the default localhost
+
+   Give your private ip in bind ip section
+     net
+       bindip: 127.0.0.1,<privateip>
+
+   To access everyone give bindip as 0.0.0.0
+     net
+       bindip: 0.0.0.0
+   
+11. Enable mandatory authentication in MongoDB:
+    add the security.authorization key to /etc/mongod.conf:
+
+      security:
+         authorization: enabled
+   After complete the above step restart the mongodb.
+
+13. Begin using MongoDB.
     Start a mongosh session on the same host machine as the mongod. You can run mongosh without any command-line options to connect to a mongod that is running on your localhost with default port 27017.
   
        mongosh
 
-10. Configuring and Connecting MongoDB
+14. Configuring and Connecting MongoDB
       Once you’ve set up MongoDB as a service, you now need to launch your MongoDB installation. To do this, open the Mongo Shell and switch to the database admin mode using the following command:
 
         > mongosh
@@ -97,7 +120,7 @@ Installation steps for mongodb:
         > show dbs
 
 
-11. Uninstall Mongodb on ubuntu:
+15. Uninstall Mongodb on ubuntu:
     To uninstall MongoDB on Ubuntu, you first need to stop mongodb and remove the MongoDB packages. To do this, you can stop the MongoDB service and execute the following command to remove the installed packages:
 
         sudo systemctl stop mongod
