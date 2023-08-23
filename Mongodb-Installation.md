@@ -86,7 +86,7 @@ Installation steps for mongodb:
 
     Now, create a root user for your MongoDB installation and exit the Mongo Shell as follows:
 
-        > db.createUser({user:"admin", pwd:”password", roles:[{role:"root", db:"admin"}]})
+        > db.createUser({user:"admin", pwd:"password", roles:[{role:"root", db:"admin"}]})
 
     You can now connect with your MongoDB, by first restarting MongoDB and then using the following line of code:
 
