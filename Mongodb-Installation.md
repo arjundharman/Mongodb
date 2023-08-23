@@ -2,28 +2,28 @@
 Installation steps for mongodb:
 
 1. Import the public key used by the package management system.
-  From a terminal, install gnupg and curl if they are not already available:
+   From a terminal, install gnupg and curl if they are not already available:
 
        sudo apt-get install gnupg curl
 
-  Issue the following command to import the MongoDB public GPG Key from 
-  https://pgp.mongodb.com/server-6.0.asc:
+   Issue the following command to import the MongoDB public GPG Key from 
+   https://pgp.mongodb.com/server-6.0.asc:
 
-      curl -fsSL https://pgp.mongodb.com/server-6.0.asc | \
-       sudo gpg -o /usr/share/keyrings/mongodb-server-6.0.gpg \
-       --dearmor
+        curl -fsSL https://pgp.mongodb.com/server-6.0.asc | \
+         sudo gpg -o /usr/share/keyrings/mongodb-server-6.0.gpg \
+         --dearmor
 
 2. Create a list file for MongoDB.
-  Create the list file /etc/apt/sources.list.d/mongodb-org-6.0.list for your version of Ubuntu.
-  Click on the appropriate tab for your version of Ubuntu. If you are unsure of what Ubuntu version the host is running, open a terminal or shell on the host and execute lsb_release -dc.
+   Create the list file /etc/apt/sources.list.d/mongodb-org-6.0.list for your version of Ubuntu.
+   Click on the appropriate tab for your version of Ubuntu. If you are unsure of what Ubuntu version the host is running, open a terminal or shell on the host and execute lsb_release -dc.
 
-  Create the /etc/apt/sources.list.d/mongodb-org-6.0.list file for Ubuntu 22.04 (Jammy):
+   Create the /etc/apt/sources.list.d/mongodb-org-6.0.list file for Ubuntu 22.04 (Jammy):
 
-      echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-6.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+        echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-6.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
 
-  Create the /etc/apt/sources.list.d/mongodb-org-6.0.list file for Ubuntu 20.04 (Focal):
+   Create the /etc/apt/sources.list.d/mongodb-org-6.0.list file for Ubuntu 20.04 (Focal):
 
-      echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-6.0.gpg ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+        echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-6.0.gpg ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
 
 3. Reload local package database.
 
