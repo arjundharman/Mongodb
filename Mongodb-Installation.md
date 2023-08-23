@@ -127,7 +127,7 @@ Installation steps for mongodb:
 
         sudo apt-get purge mongodb-org*
 
-  You can remove your created databases, log files and directories using the following command:
+    You can remove your created databases, log files and directories using the following command:
 
         sudo rm -r /var/log/mongodb
         sudo rm -r /var/lib/mongodb
